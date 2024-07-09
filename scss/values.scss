@@ -1,0 +1,67 @@
+$fontMain: "Mont";
+
+$colorWhite: rgba(255, 255, 255, 1);
+$colorBlack: rgba(0, 0, 0, 1);
+
+$colorDark: rgba(40, 41, 34, 1);
+$colorGray: rgba(217, 217, 217, 1);
+$colorSite: rgba(40, 56, 51, 1);
+$colorText: rgba(97, 100, 92, 1);
+
+// @media responsive
+
+$responsive1599: "1599px";
+$responsive1439: "1439px";
+$responsive1279: "1279px";
+$responsive1023: "1023px";
+$responsive767: "767px";
+$responsive639: "639px";
+$responsive479: "479px";
+
+@mixin responsiveMinWidth768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin responsive1599 {
+  @media (max-width: $responsive1599) {
+    @content;
+  }
+}
+
+@mixin responsive1439 {
+  @media (max-width: $responsive1439) {
+    @content;
+  }
+}
+
+@mixin responsive1279 {
+  @media (max-width: $responsive1279) {
+    @content;
+  }
+}
+
+@mixin responsive1023 {
+  @media (max-width: $responsive1023) {
+    @content;
+  }
+}
+
+@mixin responsive767 {
+  @media (max-width: $responsive767) {
+    @content;
+  }
+}
+
+@mixin responsive639 {
+  @media (max-width: $responsive639) {
+    @content;
+  }
+}
+
+@mixin responsive479 {
+  @media (max-width: $responsive479) {
+    @content;
+  }
+}
