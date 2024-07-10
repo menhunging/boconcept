@@ -263,6 +263,7 @@
   }
 
   @include before {
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -289,6 +290,7 @@
   @include responsive767 {
     padding: 25px 15px;
     width: 320px;
+    min-height: 100vh;
   }
 
   @include responsive639 {
@@ -688,6 +690,7 @@
     transition: opacity 0.3s;
     pointer-events: none;
     z-index: -1;
+    position: fixed;
   }
 }
 

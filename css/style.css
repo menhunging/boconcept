@@ -507,6 +507,7 @@ body.hidden {
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -533,6 +534,7 @@ body.hidden {
   .menu-sections {
     padding: 25px 15px;
     width: 320px;
+    min-height: 100vh;
   }
 }
 @media (max-width: 639px) {
@@ -910,6 +912,7 @@ body.hidden {
   transition: opacity 0.3s;
   pointer-events: none;
   z-index: -1;
+  position: fixed;
 }
 
 .search-block {
