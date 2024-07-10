@@ -84,6 +84,43 @@ $(document).ready(function () {
       body.removeClass("hidden");
     }
   }
+
+  if ($(".header-new .btn-search").length > 0) {
+    const wrapperSearchBlock = $(".search-block__wrapper");
+    const searchBlock = $(".search-block");
+    const btnSearch = $(".header-new .btn-search");
+    const btnSearchClose = $(".search-block__close");
+    const body = $("body");
+
+    btnSearch.on("click", function () {
+      openSearch();
+    });
+
+    btnSearchClose.on("click", function () {
+      closeSearch();
+    });
+
+    wrapperSearchBlock.on("click", function (e) {
+      if (
+        !searchBlock.is(e.target) &&
+        wrapperSearchBlock.has(e.target).length === 0
+      ) {
+        closeSearch();
+      }
+    });
+
+    function openSearch() {
+      wrapperSearchBlock.addClass("opened");
+      searchBlock.addClass("opened");
+      body.removeClass("hidden");
+    }
+
+    function closeSearch() {
+      wrapperSearchBlock.removeClass("opened");
+      searchBlock.removeClass("opened");
+      body.removeClass("hidden");
+    }
+  }
 });
 
 $(window).on("resize", function () {});
