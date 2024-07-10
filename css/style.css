@@ -793,8 +793,8 @@ body.hidden {
 }
 @media (max-width: 767px) {
   .btn-phone, .btn-cabinet, .btn-basket, .btn-favorite, .btn-search {
-    width: 13px;
-    height: 13px;
+    width: 16px;
+    height: 16px;
   }
 }
 
