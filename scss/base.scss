@@ -9,6 +9,14 @@ body {
   }
 }
 
+.overlay {
+  &::before {
+    background-color: rgba(40, 41, 34, 0.5);
+    backdrop-filter: blur(10px) contrast(0.6);
+    -webkit-backdrop-filter: blur(2px) contrast(0.6);
+  }
+}
+
 // .container {
 //   width: 100%;
 //   max-width: 1340px;
