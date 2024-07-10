@@ -112,7 +112,7 @@ $(document).ready(function () {
     function openSearch() {
       wrapperSearchBlock.addClass("opened");
       searchBlock.addClass("opened");
-      body.removeClass("hidden");
+      body.addClass("hidden");
     }
 
     function closeSearch() {
