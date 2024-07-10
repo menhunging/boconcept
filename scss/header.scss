@@ -732,6 +732,7 @@
     width: 100%;
     font-weight: 400;
     padding-right: 50px;
+    border-radius: 0;
 
     @include responsive767 {
       font-size: 14px;
