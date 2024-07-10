@@ -778,8 +778,8 @@ body.hidden {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 16px;
-  height: 16px;
+  width: 27px;
+  height: 20px;
   transition: opacity 0.3s;
 }
 .btn-phone:hover, .btn-cabinet:hover, .btn-basket:hover, .btn-favorite:hover, .btn-search:hover {
@@ -953,6 +953,7 @@ body.hidden {
   width: 100%;
   font-weight: 400;
   padding-right: 50px;
+  border-radius: 0;
 }
 @media (max-width: 767px) {
   .search-block input {
