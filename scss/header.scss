@@ -10,9 +10,19 @@
   color: $colorText;
   transition: transform 0.5s;
   z-index: 10;
+  color: rgb(128, 128, 128);
+
+  @include responsive1599 {
+    font-size: 14px;
+  }
 
   @include responsive1439 {
     font-size: 12px;
+  }
+
+  @include responsive767 {
+    font-size: 12px;
+    line-height: 14px;
   }
 
   &__phone {
@@ -130,6 +140,7 @@
 
       @include responsive767 {
         order: 2;
+        margin: 0;
       }
     }
 
@@ -147,17 +158,8 @@
   }
 
   a {
-    @include text-decoration-hover($colorText);
-  }
-
-  @include responsive1599 {
-    font-size: 14px;
-    line-height: 14px;
-  }
-
-  @include responsive767 {
-    font-size: 12px;
-    line-height: 12px;
+    color: rgb(128, 128, 128);
+    @include text-decoration-hover(rgb(128, 128, 128));
   }
 }
 
@@ -167,7 +169,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $colorGray;
+  background-color: #f5f5f5;
   transition: transform 1s;
 
   @include responsive1599 {
@@ -220,13 +222,22 @@
       display: none;
     }
   }
+
+  a {
+    color: #61645c;
+    font-weight: 400;
+
+    strong {
+      font-weight: 600;
+      color: #282922;
+    }
+  }
 }
 
 .header-new__bottom {
   position: relative;
   padding: 18px 80px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
   @include responsive1599 {
@@ -292,7 +303,7 @@
 
 .menu-new {
   color: $colorDark;
-  font-weight: 600;
+  margin: 0 auto;
 
   ul {
     display: flex;
@@ -302,9 +313,21 @@
     @include responsive1699 {
       gap: 20px;
     }
+  }
 
-    @include responsive1439 {
-      gap: 12px;
+  a {
+    color: rgb(128, 128, 128);
+  }
+
+  .summercolor {
+    font-weight: 600 !important;
+
+    a {
+      color: #918767 !important;
+
+      &:hover {
+        text-decoration-color: #918767;
+      }
     }
   }
 
@@ -537,7 +560,20 @@
   padding: 6px 12px;
   background-color: #918767;
   color: $colorWhite;
-  font-weight: 700;
+  font-weight: 600;
+  margin-left: 35px;
+
+  @include responsive1279 {
+    margin-left: 0;
+    order: -1;
+  }
+
+  @include responsive767 {
+    display: flex;
+    order: 2;
+    margin: 0 !important;
+    margin-left: auto !important;
+  }
 
   @include before {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.54545 4.09091C6.54545 2.7353 5.44652 1.63636 4.09091 1.63636C2.7353 1.63636 1.63636 2.7353 1.63636 4.09091V13.9091C1.63636 15.2647 2.7353 16.3636 4.09091 16.3636C5.44652 16.3636 6.54545 15.2647 6.54545 13.9091V4.09091ZM3 0C1.34314 0 0 1.34315 0 3V15C0 16.6569 1.34315 18 3 18H5.18182C6.83867 18 8.18182 16.6569 8.18182 15V3C8.18182 1.34315 6.83867 0 5.18182 0H3ZM16.3636 4.09091C16.3636 2.7353 15.2647 1.63636 13.9091 1.63636C12.5535 1.63636 11.4545 2.7353 11.4545 4.09091V5.72727C11.4545 7.08288 12.5535 8.18182 13.9091 8.18182C15.2647 8.18182 16.3636 7.08288 16.3636 5.72727V4.09091ZM12.8182 0C11.1613 0 9.81818 1.34315 9.81818 3V6.81818C9.81818 8.47503 11.1613 9.81818 12.8182 9.81818H15C16.6569 9.81818 18 8.47504 18 6.81818V3C18 1.34315 16.6569 0 15 0H12.8182ZM11.4545 14.7273C11.4545 13.8235 12.1872 13.0909 13.0909 13.0909H14.7273C15.631 13.0909 16.3636 13.8235 16.3636 14.7273C16.3636 15.631 15.631 16.3636 14.7273 16.3636H13.0909C12.1872 16.3636 11.4545 15.631 11.4545 14.7273ZM12.8182 18C11.1613 18 9.81818 16.6569 9.81818 15V14.4545C9.81818 12.7977 11.1613 11.4545 12.8182 11.4545H15C16.6569 11.4545 18 12.7977 18 14.4545V15C18 16.6569 16.6569 18 15 18H12.8182Z' fill='white'/%3e%3c/svg%3e ");
@@ -547,15 +583,6 @@
     position: relative;
     width: 18px;
     height: 18px;
-  }
-
-  @include responsive1279 {
-    order: -1;
-  }
-
-  @include responsive767 {
-    display: flex;
-    order: 2;
   }
 
   &.mobile {
@@ -1275,4 +1302,13 @@
 
 .header-catalog {
   left: 80px;
+
+  @include responsive767 {
+    left: auto !important;
+    right: 14px;
+  }
+
+  @include responsive389 {
+    width: 290px;
+  }
 }

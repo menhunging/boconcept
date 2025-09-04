@@ -121,6 +121,22 @@ $(document).ready(function () {
       body.removeClass("hidden");
     }
   }
+
+  if ($(".header__catalog").length > 0) {
+    movingHeaderCatalog();
+  }
 });
 
-$(window).on("resize", function () {});
+function movingHeaderCatalog() {
+  if ($(".btn-catalog").length > 0) {
+    const btn = $(".btn-catalog");
+    const offsetLeft = `left: ${btn.offset().left}px`;
+    $(".header__catalog").attr("style", offsetLeft);
+  }
+}
+
+$(window).on("resize", function () {
+  if ($(".header__catalog").length > 0) {
+    movingHeaderCatalog();
+  }
+});
