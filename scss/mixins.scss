@@ -568,7 +568,7 @@
   text-decoration-color: transparent;
   @include transition(text-decoration 0.3s);
 
-  &:hover {
+  @include hover {
     text-decoration-color: $color;
   }
 }
@@ -589,10 +589,18 @@
     opacity: 0;
   }
 
-  &:hover {
+  @include hover {
     &::before {
       opacity: 1;
       transform: translateY(0px);
+    }
+  }
+}
+
+@mixin hover {
+  &:hover {
+    @media (hover: hover) {
+      @content;
     }
   }
 }

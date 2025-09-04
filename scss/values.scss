@@ -10,6 +10,8 @@ $colorText: rgba(97, 100, 92, 1);
 
 // @media responsive
 
+$responsive1799: "1799px";
+$responsive1699: "1699px";
 $responsive1599: "1599px";
 $responsive1439: "1439px";
 $responsive1279: "1279px";
@@ -17,9 +19,44 @@ $responsive1023: "1023px";
 $responsive767: "767px";
 $responsive639: "639px";
 $responsive479: "479px";
+$responsive389: "389px";
+
+// min-width
+
+@mixin responsiveMinWidth1920 {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin responsiveMinWidth1600 {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin responsiveMinWidth1280 {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
 
 @mixin responsiveMinWidth768 {
   @media (min-width: 768px) {
+    @content;
+  }
+}
+
+// /min-width
+
+@mixin responsive1799 {
+  @media (max-width: $responsive1799) {
+    @content;
+  }
+}
+
+@mixin responsive1699 {
+  @media (max-width: $responsive1699) {
     @content;
   }
 }
@@ -62,6 +99,12 @@ $responsive479: "479px";
 
 @mixin responsive479 {
   @media (max-width: $responsive479) {
+    @content;
+  }
+}
+
+@mixin responsive389 {
+  @media (max-width: $responsive389) {
     @content;
   }
 }
