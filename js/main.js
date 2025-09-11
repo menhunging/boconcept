@@ -140,3 +140,39 @@ $(window).on("resize", function () {
     movingHeaderCatalog();
   }
 });
+
+// cookies
+function setCookie(name, value, days) {
+  let expires = "";
+  if (days) {
+    let date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(name) {
+  let cookieArr = document.cookie.split("; ");
+  for (let cookie of cookieArr) {
+    let [cookieName, cookieValue] = cookie.split("=");
+    if (cookieName === name) return cookieValue;
+  }
+  return null;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  let notificationBlock = document.getElementById("notification-cookie");
+  let closeBtn = document.getElementById("notification-cookie__btn");
+
+  if (getCookie("notificationBOCO")) {
+    notificationBlock.style.display = "none";
+  } else {
+    notificationBlock.style.display = "flex";
+  }
+
+  closeBtn.addEventListener("click", function () {
+    notificationBlock.style.display = "none";
+    setCookie("notificationBOCO", "true", 30); // Запоминаем на 30 дней
+  });
+});

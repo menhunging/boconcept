@@ -1,35 +1,10 @@
 .btn {
-  -webkit-appearance: none;
-  border-radius: 0;
-  position: relative;
-  color: $colorBlack;
-  border: 1px solid transparent;
-  display: inline-block;
-  transition: all 0.3s;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 24px;
-  text-align: center;
-  padding: 15px 32px;
-  border-radius: 10px;
-  text-transform: uppercase;
+}
 
-  @include responsive1279 {
-    padding: 15px 20px;
-  }
-
-  @include responsive767 {
-    font-size: 12px;
-    line-height: 14px;
-    padding: 13px 15px;
-  }
-
-  &--green {
-    color: $colorWhite;
-    background-color: #283833;
-
-    &:hover {
-      transform: scale(0.95);
-    }
+button,
+.btn {
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
   }
 }
