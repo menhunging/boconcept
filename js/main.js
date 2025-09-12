@@ -125,6 +125,53 @@ $(document).ready(function () {
   if ($(".header__catalog").length > 0) {
     movingHeaderCatalog();
   }
+
+  if ($(".cardInStorkBl").length > 0) {
+    const block = $(".cardInStorkBl");
+    const listItems = block.find("ul li");
+    const moreBtn = block.find(".cardInStorkBl__more");
+    const countVisible = 3;
+
+    if (listItems.length > countVisible) {
+      listItems.slice(countVisible).hide();
+      moreBtn.addClass("visible");
+      moreBtn.find(".cardInStorkBl__num").text(listItems.length - countVisible);
+    }
+
+    moreBtn.on("click", function () {
+      listItems.show();
+      moreBtn.removeClass("visible");
+    });
+  }
+
+  if ($(".modalNew").length > 0) {
+    $("[data-popup]").on("click", function (event) {
+      event.preventDefault();
+      const modalId = $(this).data("popup");
+      $("#" + modalId).addClass("visible");
+      $("body").addClass("hidden");
+    });
+
+    $(".modalNew__close, .modalNew__overlay").on("click", function () {
+      $(this).closest(".modalNew").removeClass("visible");
+      $("body").removeClass("hidden");
+    });
+
+    $(".modalNew__inner").on("click", function (event) {
+      if (event.target === this) {
+        $(this).closest(".modalNew").removeClass("visible");
+        $("body").removeClass("hidden");
+      }
+    });
+
+    // Закрытие по ESC
+    $(document).on("keydown", function (event) {
+      if (event.key === "Escape") {
+        $(".modalNew.visible").removeClass("visible");
+        $("body").removeClass("hidden");
+      }
+    });
+  }
 });
 
 function movingHeaderCatalog() {

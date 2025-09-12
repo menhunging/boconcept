@@ -279,6 +279,7 @@ body.hidden {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  z-index: 9999999;
 }
 @media (max-width: 767px) {
   .notification-cookie {
@@ -333,6 +334,7 @@ body.hidden {
   transition: opacity 0.3s;
   font-weight: 600;
   font-size: 18px;
+  padding: 6px;
 }
 @media (max-width: 767px) {
   .notification-cookie .notification-cookie__btn {
@@ -341,6 +343,185 @@ body.hidden {
 }
 .notification-cookie .notification-cookie__btn:hover {
   opacity: 0.85;
+}
+
+.cardInStorkBl {
+  text-align: right;
+}
+.cardInStorkBl .cardInStorkBl__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.cardInStorkBl .cardInStorkBl__more {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: underline;
+  color: #96968d;
+  transition: text-decoration 0.3s;
+  margin-top: 12px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+  display: none;
+}
+@media (hover: hover) {
+  .cardInStorkBl .cardInStorkBl__more:hover {
+    text-decoration-color: transparent;
+  }
+}
+.cardInStorkBl .cardInStorkBl__more.visible {
+  display: block;
+}
+.cardInStorkBl ul {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cardInStorkBl ul li {
+  text-align: right;
+  font-size: 14px;
+  line-height: 16px;
+}
+.cardInStorkBl ul a {
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: underline;
+  color: #96968d;
+  transition: text-decoration 0.3s;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+}
+@media (hover: hover) {
+  .cardInStorkBl ul a:hover {
+    text-decoration-color: transparent;
+  }
+}
+
+.modalNew {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  transition: all 0.3s;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.modalNew.visible {
+  pointer-events: initial;
+  opacity: 1;
+  visibility: visible;
+}
+.modalNew.visible .modalNew__content {
+  transform: scale(1);
+}
+.modalNew .modalNew__inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 0;
+  position: relative;
+  overflow: auto;
+}
+.modalNew .modalNew__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.modalNew .modalNew__content {
+  position: relative;
+  max-width: 540px;
+  margin: auto;
+  background: #fff;
+  z-index: 1001;
+  border-radius: 8px;
+  transform: scale(0);
+  transition: all 0.3s;
+  padding: 40px;
+}
+@media (max-width: 767px) {
+  .modalNew .modalNew__content {
+    padding: 32px 16px;
+    max-width: 95%;
+    width: 100%;
+  }
+}
+.modalNew .modalNew__close {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11 1L1 11M1 1L11 11' stroke='%23CACACA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+}
+.modalNew .modalNew__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.modalNew .modalNew__body {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.modalNew .modalNew__body a {
+  color: #9c9376;
+  text-decoration: underline;
+  transition: text-decoration 0.3s;
+}
+@media (hover: hover) {
+  .modalNew .modalNew__body a:hover {
+    text-decoration-color: transparent;
+  }
+}
+.modalNew .modalNew__body .modalNew__map {
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #9c9376;
+  color: rgb(255, 255, 255);
+  display: block;
+  text-decoration: none;
+  height: 39px;
+  padding: 11px 0;
+  border-radius: 10px;
+  display: none;
+  width: 100%;
+}
+@media (max-width: 1279px) {
+  .modalNew .modalNew__body .modalNew__map {
+    display: block;
+  }
+}
+.modalNew .modalNew__caption {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
 }
 
 button:disabled,

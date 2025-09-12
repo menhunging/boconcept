@@ -1,0 +1,660 @@
+.cardInStorkBl {
+  text-align: right;
+  margin-top: 32px;
+
+  @include responsive767 {
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .cardInStorkBl__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  .cardInStorkBl__more {
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: underline;
+    color: #96968d;
+    transition: text-decoration 0.3s;
+    margin-top: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 2px;
+    display: none;
+
+    @include responsive767 {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    @include hover {
+      text-decoration-color: transparent;
+    }
+
+    &.visible {
+      display: block;
+    }
+  }
+
+  .cardInStorkBl__num {
+  }
+
+  ul {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    li {
+      text-align: right;
+      font-size: 14px;
+      line-height: 16px;
+
+      @include responsive767 {
+        text-align: left;
+      }
+    }
+
+    a {
+      font-size: 14px;
+      line-height: 16px;
+      text-decoration: underline;
+      color: #96968d;
+      transition: text-decoration 0.3s;
+      text-decoration-skip-ink: none;
+      text-underline-offset: 2px;
+
+      @include hover {
+        text-decoration-color: transparent;
+      }
+    }
+  }
+}
+
+.modalNew {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  transition: all 0.3s;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+
+  &.visible {
+    pointer-events: initial;
+    opacity: 1;
+    visibility: visible;
+
+    .modalNew__content {
+      transform: scale(1);
+    }
+  }
+
+  .modalNew__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 0;
+    position: relative;
+    overflow: auto;
+  }
+
+  .modalNew__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .modalNew__content {
+    position: relative;
+    max-width: 540px;
+    margin: auto;
+    background: #fff;
+    z-index: 1001;
+    border-radius: 8px;
+    transform: scale(0);
+    transition: all 0.3s;
+    padding: 40px;
+
+    @include responsive767 {
+      padding: 32px 16px;
+      max-width: 95%;
+      width: 100%;
+    }
+  }
+
+  .modalNew__close {
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M11 1L1 11M1 1L11 11' stroke='%23CACACA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+  }
+
+  #map {
+    width: 100%;
+  }
+
+  .modalNew__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .modalNew__body {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    @include responsive767 {
+    }
+
+    a {
+      color: #9c9376;
+      text-decoration: underline;
+      transition: text-decoration 0.3s;
+
+      @include hover {
+        text-decoration-color: transparent;
+      }
+    }
+
+    .modalNew__map {
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: #9c9376;
+      color: $colorWhite;
+      display: block;
+      text-decoration: none;
+      height: 39px;
+      padding: 11px 0;
+      border-radius: 10px;
+      display: none;
+      width: 100%;
+
+      @include responsive1279 {
+        display: block;
+      }
+    }
+  }
+
+  .modalNew__caption {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.current-partnerships-info {
+  position: relative;
+
+  .container {
+    min-height: 415px;
+    display: flex;
+    align-items: center;
+
+    @include responsive1439 {
+      min-height: 280px;
+    }
+
+    @include responsive1023 {
+      flex-direction: column;
+      min-height: initial;
+    }
+  }
+
+  .current-partnerships-info__content {
+    width: 525px;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include responsive1439 {
+      gap: 30px;
+    }
+
+    @include responsive1279 {
+      width: 390px;
+    }
+
+    @include responsive1023 {
+      width: 100%;
+      margin-top: 24px;
+      gap: 24px;
+    }
+
+    @include responsive767 {
+      gap: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  .picture-block {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 961px);
+    height: 415px;
+    width: 1100px;
+
+    @include responsive1699 {
+      left: calc(50% - 961px);
+      width: 1000px;
+    }
+
+    @include responsive1439 {
+      left: calc(50% - 646px);
+      width: 610px;
+      height: 280px;
+    }
+
+    @include responsive1279 {
+      width: 540px;
+      left: calc(50% - 512px);
+    }
+
+    @include responsive1023 {
+      width: calc(100% + 260px);
+      height: auto;
+      left: -65px;
+      position: relative;
+      padding-top: calc(400 / 768 * 100%);
+    }
+
+    @include responsive767 {
+      width: calc(100% + 40px);
+      left: 0;
+      padding-top: calc(330 / 768 * 100%);
+    }
+
+    picture {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .caption {
+  }
+}
+
+.current-partnerships-list {
+  padding: 100px 0;
+
+  @include responsive1599 {
+    padding: 80px 0;
+  }
+
+  @include responsive1439 {
+    padding: 60px 0;
+  }
+
+  @include responsive1279 {
+    padding: 40px 0;
+  }
+
+  @include responsive767 {
+    padding: 24px 0;
+  }
+
+  .current-partnerships-list__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 19px;
+
+    @include responsive1439 {
+      gap: 32px 24px;
+    }
+
+    @include responsive1279 {
+      gap: 24px;
+    }
+
+    @include responsive1023 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include responsive767 {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  .current-partnerships-list__item {
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #282922;
+    padding: 45px 16px;
+
+    @include responsive1279 {
+      padding: 16px;
+    }
+
+    @include responsive767 {
+      gap: 12px;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+
+  .picture-block {
+    width: 100%;
+
+    @include responsive1599 {
+      width: 80%;
+    }
+
+    @include responsive767 {
+      width: 45%;
+    }
+
+    img {
+      object-fit: scale-down;
+      object-position: left;
+      max-height: 72px;
+    }
+  }
+
+  .current-partnerships-list__name {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    color: #282922;
+
+    @include responsive767 {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+}
+
+.form-new-call {
+  padding: 100px 0;
+  position: relative;
+  min-height: 923px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+
+  @include responsive1699 {
+    min-height: 850px;
+  }
+
+  @include responsive1279 {
+    min-height: 722px;
+    margin-bottom: 50px;
+    padding: 50px 0;
+  }
+
+  @include responsive767 {
+    padding: 30px 0;
+    margin-bottom: 0;
+  }
+
+  .container {
+    @include responsive1023 {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  .picture-block {
+    position: absolute;
+
+    picture {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &.picture-block--one {
+      left: 0;
+      top: -119px;
+      width: 742px;
+      height: 923px;
+
+      @include responsive1699 {
+        width: 662px;
+        height: 850px;
+      }
+
+      @include responsive1599 {
+        width: 560px;
+        height: 785px;
+        top: -99px;
+      }
+
+      @include responsive1439 {
+        width: 510px;
+      }
+
+      @include responsive1279 {
+        width: 396px;
+        height: 722px;
+        top: -50px;
+      }
+
+      @include responsive1023 {
+        width: 374px;
+        height: 472px;
+        top: 0;
+        left: 0;
+        position: relative;
+      }
+
+      @include responsive767 {
+        width: 65%;
+        height: auto;
+        padding-top: calc(320 / 390 * 100%);
+      }
+    }
+
+    &.picture-block--two {
+      width: 356px;
+      height: 347px;
+      right: 0;
+      bottom: -120px;
+
+      @include responsive1699 {
+        width: 277px;
+        height: 259px;
+        bottom: -100px;
+      }
+
+      @include responsive1599 {
+        width: 326px;
+        height: 347px;
+      }
+
+      @include responsive1439 {
+        width: 256px;
+        height: 247px;
+      }
+
+      @include responsive1279 {
+        width: 202px;
+        height: 215px;
+        bottom: -40px;
+      }
+
+      @include responsive1023 {
+        width: 202px;
+        height: 215px;
+        bottom: auto;
+        top: 0;
+        right: 0;
+        position: relative;
+      }
+
+      @include responsive767 {
+        width: 28%;
+        height: auto;
+        padding-top: calc(63 / 210 * 100%);
+      }
+    }
+  }
+
+  .form-new-call__form {
+    width: 480px;
+    margin: 0 auto;
+    transform: translateX(200px);
+
+    @include responsive1599 {
+      width: 400px;
+      transform: translateX(130px);
+    }
+
+    @include responsive1279 {
+      width: 350px;
+      transform: translateX(100px);
+    }
+
+    @include responsive1023 {
+      width: 100%;
+      transform: translateX(0);
+      margin-top: 40px;
+    }
+  }
+
+  .caption {
+    & + * {
+      margin-top: 50px;
+
+      @include responsive767 {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .form-new-call__text {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 24px;
+    display: block;
+
+    @include responsive767 {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    & + * {
+      margin-top: 30px;
+
+      @include responsive767 {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .input-item {
+    width: 100%;
+
+    input {
+      width: 100%;
+      border: 0;
+      border-bottom: solid 1px #96968d;
+      color: #96968d;
+      height: 35px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 35px;
+      resize: none;
+      border: 0;
+      border-bottom: solid 1px #96968d;
+      color: #96968d;
+    }
+
+    & + .input-item {
+      margin-top: 40px;
+
+      @include responsive767 {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 90px;
+    width: 100%;
+    border-radius: 5px;
+
+    @include responsive1279 {
+      margin-top: 40px;
+    }
+
+    @include responsive1023 {
+      max-width: 350px;
+    }
+
+    & + * {
+      margin-top: 24px;
+    }
+  }
+
+  .checkBl {
+  }
+}
