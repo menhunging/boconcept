@@ -9,6 +9,10 @@ addEventListener("scroll", (event) => {
 });
 
 $(document).ready(function () {
+  $(".subcatalog-filter__checkboxes input").on("click", function () {
+    $(".btn-invis").hide();
+  });
+
   if ($(".menu-sections").length > 0) {
     const btnSections = $(".btn-sections");
     const wrapperMenuSections = $(".menu-sections__wrapper");
@@ -126,51 +130,85 @@ $(document).ready(function () {
     movingHeaderCatalog();
   }
 
-  if ($(".cardInStorkBl").length > 0) {
-    const block = $(".cardInStorkBl");
-    const listItems = block.find("ul li");
-    const moreBtn = block.find(".cardInStorkBl__more");
-    const countVisible = 3;
+  if ($("[data-btn-disabled]").length > 0) {
+    $("[data-btn-disabled]").on("click", function () {
+      const formBlock = $(this).parents("form");
+      const btn = formBlock.find("[data-for-disabled]");
+      const isDisabled = btn.prop("disabled");
 
-    if (listItems.length > countVisible) {
-      listItems.slice(countVisible).hide();
-      moreBtn.addClass("visible");
-      moreBtn.find(".cardInStorkBl__num").text(listItems.length - countVisible);
-    }
-
-    moreBtn.on("click", function () {
-      listItems.show();
-      moreBtn.removeClass("visible");
+      btn.prop("disabled", !isDisabled);
     });
   }
 
-  if ($(".modalNew").length > 0) {
-    $("[data-popup]").on("click", function (event) {
-      event.preventDefault();
-      const modalId = $(this).data("popup");
-      $("#" + modalId).addClass("visible");
-      $("body").addClass("hidden");
+  if ($(".btn-visible-form").length > 0) {
+    $(".btn-visible-form").on("click", function () {
+      $(this)
+        .hide()
+        .parents(".form-parent")
+        .addClass("opened")
+        .find(".form-hidden")
+        .slideDown(500);
     });
+  }
 
-    $(".modalNew__close, .modalNew__overlay").on("click", function () {
-      $(this).closest(".modalNew").removeClass("visible");
-      $("body").removeClass("hidden");
-    });
+  if ($(".datepicker").length > 0) {
+    // settings global
+    $.datepicker.regional["ru"] = {
+      closeText: "Закрыть",
+      prevText: "Предыдущий",
+      nextText: "Следующий",
+      currentText: "Сегодня",
+      monthNames: [
+        "Январь",
+        "Февраль",
+        "Март",
+        "Апрель",
+        "Май",
+        "Июнь",
+        "Июль",
+        "Август",
+        "Сентябрь",
+        "Октябрь",
+        "Ноябрь",
+        "Декабрь",
+      ],
+      monthNamesShort: [
+        "Янв",
+        "Фев",
+        "Мар",
+        "Апр",
+        "Май",
+        "Июн",
+        "Июл",
+        "Авг",
+        "Сен",
+        "Окт",
+        "Ноя",
+        "Дек",
+      ],
+      dayNames: [
+        "воскресенье",
+        "понедельник",
+        "вторник",
+        "среда",
+        "четверг",
+        "пятница",
+        "суббота",
+      ],
+      dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+      dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+      weekHeader: "Не",
+      dateFormat: "dd.mm.yy",
+      firstDay: 1,
+      isRTL: false,
+      showMonthAfterYear: false,
+      yearSuffix: "",
+    };
 
-    $(".modalNew__inner").on("click", function (event) {
-      if (event.target === this) {
-        $(this).closest(".modalNew").removeClass("visible");
-        $("body").removeClass("hidden");
-      }
-    });
+    $.datepicker.setDefaults($.datepicker.regional["ru"]);
+    // /settings global
 
-    // Закрытие по ESC
-    $(document).on("keydown", function (event) {
-      if (event.key === "Escape") {
-        $(".modalNew.visible").removeClass("visible");
-        $("body").removeClass("hidden");
-      }
-    });
+    initDatePicter();
   }
 });
 
@@ -182,44 +220,34 @@ function movingHeaderCatalog() {
   }
 }
 
+function initDatePicter() {
+  $(".datepicker").each(function () {
+    $(this).datepicker({
+      dateFormat: "dd.mm.yy",
+    });
+  });
+}
+
 $(window).on("resize", function () {
   if ($(".header__catalog").length > 0) {
     movingHeaderCatalog();
   }
 });
 
-// cookies
-function setCookie(name, value, days) {
-  let expires = "";
-  if (days) {
-    let date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + value + expires + "; path=/";
-}
-
-function getCookie(name) {
-  let cookieArr = document.cookie.split("; ");
-  for (let cookie of cookieArr) {
-    let [cookieName, cookieValue] = cookie.split("=");
-    if (cookieName === name) return cookieValue;
-  }
-  return null;
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  let notificationBlock = document.getElementById("notification-cookie");
-  let closeBtn = document.getElementById("notification-cookie__btn");
-
-  if (getCookie("notificationBOCO")) {
-    notificationBlock.style.display = "none";
-  } else {
-    notificationBlock.style.display = "flex";
-  }
-
-  closeBtn.addEventListener("click", function () {
-    notificationBlock.style.display = "none";
-    setCookie("notificationBOCO", "true", 30); // Запоминаем на 30 дней
-  });
+document.querySelector("#title-search").addEventListener("submit", (evt) => {
+  console.log("search-input");
+  ym(61478635, "reachGoal", "search-input");
 });
+
+document.querySelectorAll("a.btn-search.header-top__search").forEach((item) =>
+  item.addEventListener("click", (evt) => {
+    console.log("search-click");
+    ym(61478635, "reachGoal", "search-click");
+  })
+);
+
+document.querySelectorAll(".header-new-social a").forEach((item) =>
+  item.addEventListener("click", (evt) => {
+    ym(61478635, "reachGoal", "click-mes");
+  })
+);
