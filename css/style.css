@@ -2842,8 +2842,12 @@ button:disabled,
 }
 
 .general-form__small {
-  max-width: 651px;
+  max-width: 662px;
   width: 100%;
+}
+
+.btn-new.general-form__small {
+  max-width: 405px;
 }
 
 /*# sourceMappingURL=style.css.map */
