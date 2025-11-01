@@ -179,9 +179,6 @@
                                             <input type="text" placeholder="E-mail">
                                         </div>
                                         <div class="input-item">
-                                            <input type="text" placeholder="Адрес">
-                                        </div>
-                                        <div class="input-item">
                                             <input type="text" placeholder="Номер заказа*">
                                             <p>
                                                 * Номер заказа – номер договора, состоящий из нескольких цифр,
@@ -268,9 +265,6 @@
                                             <input type="text" placeholder="E-mail">
                                         </div>
                                         <div class="input-item">
-                                            <input type="text" placeholder="Адрес">
-                                        </div>
-                                        <div class="input-item">
                                             <input type="text" placeholder="Номер заказа*">
                                             <p>
                                                 * Номер заказа – номер договора, состоящий из нескольких цифр,
@@ -344,53 +338,61 @@
                                     </div>
                                 </div>
 
-                                <button class="btn-new btn--site-light btn-add-form">+ Добавить товар</button>
+                                <button class="btn-new btn--site-light general-form__small btn-add-form ">+ Добавить
+                                    товар</button>
 
-                                <div class="general-form__left">
+                                <div class="input-list">
                                     <div class="input-item">
                                         <input type="text" placeholder="Сумма возврата по всем Товарам">
                                     </div>
-
-
-                                    <div class="input-check input-result">
-                                        <span class="input-check__title">Реквизиты для возврата денежных
-                                            средств</span>
-
-                                        <div class="input-result__result">
-                                            <p>Получатель (ФИО полностью)</p>
-                                            <p>Счет</p>
-                                            <p>Номер карты</p>
-                                            <p>Кор/счет</p>
-                                            <p>БИК</p>
-                                            <p>Банк</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="check-list-politic">
-
-                                        <div class="check-block check-politic">
-                                            <input type="checkbox" id="personal" data-btn-disabled="">
-
-                                            <label for="personal">
-                                                Согласен(а) на сбор и <a href="/licenses/" target="_blank">
-                                                    обработку персональных данных </a>
-                                                в соответствии с <a href="/politic-conf/" target="_blank">
-                                                    Политикой конфиденциальности </a></label>
-                                        </div>
-
-                                        <div class="check-block check-politic">
-                                            <input type="checkbox" id="advertising">
-                                            <label for="advertising">Согласен(а) получать рекламную рассылку и
-                                                ознакомлен с <a href="/politic-form/" target="_blank">Согласием
-                                                    на получение рекламной
-                                                    рассылки</a></label>
-                                        </div>
-
-                                    </div>
-
-                                    <button type="submit" class="btn-new btn--site" data-for-disabled disabled>НАПРАВИТЬ
-                                        ЗАЯВЛЕНИЕ НА ВОЗВРАТ</button>
                                 </div>
+
+                                <div class="input-list">
+                                    <div class="input-item">
+                                        <input type="text" placeholder="Получатель (ФИО полностью)">
+                                    </div>
+                                    <div class="input-item">
+                                        <input type="text" placeholder="Кор/счет">
+                                    </div>
+                                    <div class="input-item">
+                                        <input type="text" placeholder="Счет">
+                                    </div>
+                                    <div class="input-item">
+                                        <input type="text" placeholder="БИК">
+                                    </div>
+                                    <div class="input-item">
+                                        <input type="text" placeholder="Номер карты">
+                                    </div>
+                                    <div class="input-item">
+                                        <input type="text" placeholder="Банк">
+                                    </div>
+                                </div>
+
+                                <div class="check-list-politic general-form__small">
+
+                                    <div class="check-block check-politic">
+                                        <input type="checkbox" id="personal" data-btn-disabled="">
+
+                                        <label for="personal">
+                                            Согласен(а) на сбор и <a href="/licenses/" target="_blank">
+                                                обработку персональных данных </a>
+                                            в соответствии с <a href="/politic-conf/" target="_blank">
+                                                Политикой конфиденциальности </a></label>
+                                    </div>
+
+                                    <div class="check-block check-politic">
+                                        <input type="checkbox" id="advertising">
+                                        <label for="advertising">Согласен(а) получать рекламную рассылку и
+                                            ознакомлен с <a href="/politic-form/" target="_blank">Согласием
+                                                на получение рекламной
+                                                рассылки</a></label>
+                                    </div>
+
+                                </div>
+
+                                <button type="submit" class="btn-new btn--site general-form__small" data-for-disabled
+                                    disabled>НАПРАВИТЬ
+                                    ЗАЯВЛЕНИЕ НА ВОЗВРАТ</button>
 
                             </form>
                         </div>

@@ -383,7 +383,7 @@ body.hidden {
   }
 }
 
-.ui-icon {
+.ui-datepicker .ui-icon {
   display: none !important;
 }
 
@@ -2839,6 +2839,15 @@ button:disabled,
 
 .form-parent.opened .form-grettings {
   display: none;
+}
+
+.general-form__small {
+  max-width: 662px;
+  width: 100%;
+}
+
+.btn-new.general-form__small {
+  max-width: 405px;
 }
 
 /*# sourceMappingURL=style_new.css.map */

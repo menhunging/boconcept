@@ -364,6 +364,68 @@ body.hidden {
   opacity: 0.85;
 }
 
+.ui-datepicker {
+  position: absolute;
+  width: 400px;
+}
+@media (max-width: 767px) {
+  .ui-datepicker {
+    width: 320px;
+  }
+}
+
+.ui-datepicker td a {
+  padding: 0.9em;
+}
+@media (max-width: 767px) {
+  .ui-datepicker td a {
+    padding: 0.6em;
+  }
+}
+
+.ui-datepicker .ui-icon {
+  display: none !important;
+}
+
+.ui-datepicker-prev {
+  cursor: pointer;
+  transform: rotate(90deg);
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10.59 0L6 4.58L1.41 0L0 1.41L6 7.41L12 1.41L10.59 0Z' fill='%23282922'/%3e%3c/svg%3e ") !important;
+}
+
+.ui-datepicker-next {
+  cursor: pointer;
+  transform: rotate(-90deg);
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M10.59 0L6 4.58L1.41 0L0 1.41L6 7.41L12 1.41L10.59 0Z' fill='%23282922'/%3e%3c/svg%3e ") !important;
+}
+
+.icon-calendar {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='23' height='26' viewBox='0 0 23 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.29435 0.105326C4.4572 0.399151 4.01448 1.11386 4.01448 2.17797V2.75768L3.11293 2.7815C2.31602 2.81327 2.14698 2.83709 1.74451 3.03562C0.867107 3.46445 0.255342 4.25062 0.0702029 5.19562C0.00580661 5.54503 -0.0102925 8.07033 0.00580661 14.3677L0.0299552 23.0633L0.215095 23.5159C0.480729 24.1592 1.08444 24.7865 1.74451 25.1042L2.28383 25.3662H11.5005H20.7173L21.2566 25.1042C21.9166 24.7865 22.5204 24.1592 22.786 23.5159L22.9711 23.0633L22.9953 14.3677C23.0114 8.07033 22.9953 5.54503 22.9309 5.19562C22.7457 4.25062 22.134 3.4565 21.2646 3.03562C20.8783 2.85297 20.677 2.81327 20.017 2.78944L19.2281 2.75768V2.26533C19.2281 1.48709 19.0349 0.970915 18.5922 0.542091C17.8194 -0.188498 16.7649 -0.180555 16.0083 0.565914C15.5897 0.978855 15.4448 1.36797 15.4448 2.11444V2.77356H14.4869H13.5371L13.4888 2.0668C13.4324 1.23297 13.2714 0.859739 12.7885 0.446796C12.0399 -0.180555 11.0015 -0.14085 10.3012 0.557974C9.89869 0.955032 9.78599 1.24092 9.73769 2.01915L9.6894 2.73386L8.75565 2.75768L7.81386 2.7815L7.78166 2.08268C7.74141 1.26474 7.57237 0.86768 7.0733 0.454739C6.55813 0.0179729 5.90612 -0.109085 5.29435 0.105326ZM6.27639 1.15356C6.70302 1.36797 6.75132 1.61415 6.75132 3.60739C6.75132 5.52915 6.70302 5.80709 6.34079 6.06121C6.04296 6.25974 5.66463 6.22003 5.3668 5.95797L5.10116 5.72768L5.07701 3.82974C5.04482 1.69356 5.08506 1.42356 5.48754 1.18533C5.80147 0.994738 5.96246 0.986797 6.27639 1.15356ZM11.9352 1.1218C12.386 1.32033 12.4262 1.47121 12.4504 3.32944C12.4665 4.2665 12.4584 5.19562 12.4262 5.38621C12.3135 6.13268 11.6132 6.4265 11.082 5.95797L10.8163 5.72768L10.7922 3.75827C10.768 1.59827 10.7922 1.4315 11.2108 1.17739C11.5005 1.00268 11.6535 0.994738 11.9352 1.1218ZM17.6584 1.15356C18.1012 1.36003 18.1414 1.55856 18.1414 3.60739C18.1414 4.60797 18.1173 5.53709 18.077 5.65621C18.0046 5.91033 17.594 6.18827 17.2801 6.18827C17.1513 6.18827 16.9501 6.09297 16.7971 5.95797L16.5315 5.72768L16.5074 3.71062C16.4913 1.81268 16.4993 1.68562 16.6522 1.43944C16.9018 1.03444 17.2238 0.947092 17.6584 1.15356ZM21.2405 14.8362C21.2405 20.3712 21.2163 22.6027 21.1519 22.7933C21.0312 23.1427 20.7817 23.4127 20.4597 23.5477C20.0733 23.7144 2.92779 23.7144 2.54141 23.5477C2.21943 23.4127 1.96989 23.1427 1.84915 22.7933C1.78475 22.6027 1.76061 20.3712 1.76061 14.8362V7.14121H11.5005H21.2405V14.8362Z' fill='%23999999'/%3e%3cpath d='M3.42695 10.2143C3.39475 10.2382 3.37061 10.8814 3.37061 11.6438V13.0176H4.98051H6.59042V11.5882V10.1588H5.03686C4.17556 10.1588 3.4511 10.1826 3.42695 10.2143Z' fill='%23999999'/%3e%3cpath d='M7.71729 11.5882V13.0176H9.32719H10.9371V11.5882V10.1588H9.32719H7.71729V11.5882Z' fill='%23999999'/%3e%3cpath d='M12.064 11.5882V13.0176H13.6739H15.2838V11.5882V10.1588H13.6739H12.064V11.5882Z' fill='%23999999'/%3e%3cpath d='M16.4106 11.5882V13.0176H18.0206H19.6305L19.6144 11.604L19.5902 10.1985L18.0045 10.1746L16.4106 10.1588V11.5882Z' fill='%23999999'/%3e%3cpath d='M3.37061 15.3999V16.8293H4.98051H6.59042V15.3999V13.9705H4.98051H3.37061V15.3999Z' fill='%23999999'/%3e%3cpath d='M7.71729 15.3999V16.8293H9.32719H10.9371V15.3999V13.9705H9.32719H7.71729V15.3999Z' fill='%23999999'/%3e%3cpath d='M12.064 15.3999V16.8293H13.6739H15.2838V15.3999V13.9705H13.6739H12.064V15.3999Z' fill='%23999999'/%3e%3cpath d='M16.4106 15.3999V16.8293H18.0206H19.6305V15.3999V13.9705H18.0206H16.4106V15.3999Z' fill='%23999999'/%3e%3cpath d='M3.37061 19.2117V20.6411H4.98051H6.59042V19.2117V17.7823H4.98051H3.37061V19.2117Z' fill='%23999999'/%3e%3cpath d='M7.71729 19.2117V20.6411H9.32719H10.9371V19.2117V17.7823H9.32719H7.71729V19.2117Z' fill='%23999999'/%3e%3cpath d='M12.064 19.2117V20.6411H13.6739H15.2838V19.2117V17.7823H13.6739H12.064V19.2117Z' fill='%23999999'/%3e%3cpath d='M16.4106 19.2117V20.6411H18.0206H19.6305V19.2117V17.7823H18.0206H16.4106V19.2117Z' fill='%23999999'/%3e%3c/svg%3e ");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+  border: 1px solid #ff000f;
+  background: #ff000f;
+}
+
 button:disabled,
 .btn:disabled {
   opacity: 0.5;
@@ -2434,6 +2496,7 @@ button:disabled,
   padding: 18px;
   border-radius: 5px;
   transition: all 0.3s;
+  text-align: center;
 }
 
 .btn--site-light {
@@ -2457,7 +2520,6 @@ button:disabled,
 }
 
 .general-form {
-  margin-top: 50px;
   background-color: #f3f3f3;
   padding: 30px;
   display: flex;
@@ -2465,11 +2527,6 @@ button:disabled,
   gap: 30px;
   font-size: 16px;
   line-height: 18px;
-}
-@media (max-width: 1279px) {
-  .general-form {
-    margin-top: 40px;
-  }
 }
 @media (max-width: 1023px) {
   .general-form {
@@ -2555,6 +2612,37 @@ button:disabled,
 @media (max-width: 767px) {
   .general-form .error {
     font-size: 10px;
+  }
+}
+
+.general-form__item {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (max-width: 1023px) {
+  .general-form__item {
+    gap: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .general-form__item {
+    gap: 35px;
+  }
+}
+
+.btn-add-form {
+  max-width: 690px;
+  width: 100%;
+}
+@media (max-width: 1279px) {
+  .btn-add-form {
+    max-width: 450px;
+  }
+}
+@media (max-width: 1023px) {
+  .btn-add-form {
+    max-width: 100%;
   }
 }
 
@@ -2697,10 +2785,65 @@ button:disabled,
 }
 
 .return-goods {
+  padding: 50px 0;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .return-goods {
+    padding: 30px 0;
+  }
+}
+
+.return-goods__inner {
+  margin-top: 35px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+}
+@media (max-width: 767px) {
+  .return-goods__inner {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 15px;
+  }
+}
+
+.return-goods__grettings {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 35px;
+  max-width: 926px;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .return-goods__grettings {
+    gap: 20px;
+  }
+}
+.return-goods__grettings .btn-new {
+  font-size: 13px;
+  line-height: 24px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.return-goods__content {
+  display: none;
+  width: 100%;
+}
+
+.form-hidden {
+  display: none;
+}
+
+.form-parent.opened .form-grettings {
+  display: none;
+}
+
+.general-form__small {
+  max-width: 651px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
