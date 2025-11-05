@@ -151,6 +151,32 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".check-block--other").length > 0) {
+    // $(".check-block--other label").on("click", function () {
+    //   let parents = $(this).parents(".check-block--other");
+    // });
+
+    $(".general-form .input-check .check-block input").on(
+      "change",
+      function () {
+        let parents = $(this).parents(".check-block");
+        let parentsListInput = parents.parents(".input-check");
+
+        if (parents.hasClass("check-block--other")) {
+          let inputOther = parents.find(".check-block__other");
+          inputOther.addClass("visible");
+          parentsListInput.addClass("form--other");
+        } else {
+          if (parentsListInput.hasClass("form--other")) {
+            let inputOther = parentsListInput.find(".check-block__other");
+            parentsListInput.removeClass("form--other");
+            inputOther.removeClass("visible").val("");
+          }
+        }
+      }
+    );
+  }
+
   if ($(".datepicker").length > 0) {
     // settings global
     $.datepicker.regional["ru"] = {
