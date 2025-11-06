@@ -152,10 +152,6 @@ $(document).ready(function () {
   }
 
   if ($(".check-block--other").length > 0) {
-    // $(".check-block--other label").on("click", function () {
-    //   let parents = $(this).parents(".check-block--other");
-    // });
-
     $(".general-form .input-check .check-block input").on(
       "change",
       function () {

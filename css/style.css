@@ -2850,4 +2850,25 @@ button:disabled,
   max-width: 405px;
 }
 
+.check-block--other {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.check-block .check-block__other {
+  vertical-align: middle;
+  border: 0;
+  border-bottom: solid 1px #96968d;
+  background-color: transparent;
+  width: 525px;
+  height: 25px;
+}
+.check-block .check-block__other::placeholder {
+  opacity: 0.33;
+}
+.check-block .check-block__other.visible {
+  display: inline-block;
+}
+
 /*# sourceMappingURL=style.css.map */
