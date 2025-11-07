@@ -140,6 +140,16 @@ $(document).ready(function () {
     });
   }
 
+  if ($("#basket-root").length > 0) {
+    $("[data-btn-disabled]").on("click", function () {
+      const formBlock = $(this).parents("#basket-root");
+      const btn = formBlock.find("[data-for-disabled]");
+      const isDisabled = btn.prop("disabled");
+
+      btn.prop("disabled", !isDisabled);
+    });
+  }
+
   if ($(".btn-visible-form").length > 0) {
     $(".btn-visible-form").on("click", function () {
       $(this)
@@ -231,6 +241,23 @@ $(document).ready(function () {
     // /settings global
 
     initDatePicter();
+  }
+
+  if ($(".video__btn--play").length > 0) {
+    $(".video__btn--play").map(function () {
+      let sefl = $(this);
+
+      if (sefl.parents(".video").find("video").length > 0) {
+        sefl.on("click", function () {
+          let elem = sefl.parents(".video").find("video");
+          sefl.toggleClass("pausedVideo");
+          sefl.parents(".video").toggleClass("playVideo");
+          sefl.hasClass("pausedVideo")
+            ? elem.trigger("play")
+            : elem.trigger("pause");
+        });
+      }
+    });
   }
 });
 
